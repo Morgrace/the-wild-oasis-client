@@ -29,7 +29,7 @@ export default async function Navigation() {
             href="/account"
             className="hover:text-accent-400 flex items-center gap-2 transition-colors"
           >
-            {session && (
+            {session?.user ? (
               <Image
                 src={session?.user?.image}
                 alt="profile"
@@ -37,6 +37,8 @@ export default async function Navigation() {
                 height="40"
                 className="rounded-full"
               />
+            ) : (
+              ""
             )}
             <span>Guest area</span>
           </Link>
